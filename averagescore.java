@@ -2,52 +2,51 @@ import java.util.Scanner;
 
 public class averagescore
 {
-	static int sum=0;
+	static double sum=0;
 
-	public int calcaverage(String name, int totalmarks)
-	{	
-		//int i=1;
+	public double calcsum(String name, int totalmarks)
+	{
 
-	//		while(i<=5)
-	//	{
-		sum=sum+totalmarks;
+		sum=sum+totalmarks;			
 		
-	//	}		
+		return sum;
 		
-		return sum;	
-	//	i++;
 	}
 
 	public static void main(String args[])
 	{	
-		Scanner sc=new Scanner(System.in);
+		
+		averagescore ob=new averagescore();
 
+		Scanner sc=new Scanner(System.in);
 	
 		String name;
 		int totalmarks;
 				
-		averagescore ob=new averagescore();
-		
 		int i=1;
 
-		while(i<=5)
-		{
+		while(i<=10)
+			{
 
-		System.out.println("Enter the student name: ");
+			System.out.println("Enter the student name: ");
+	
+			name=sc.next();
 
-		name=sc.next();
+			System.out.println("Enter the student marks: ");
 
-		System.out.println("Enter the student marks: ");
+			totalmarks=sc.nextInt();
 
-		totalmarks=sc.nextInt();
+			sum=ob.calcsum(name,totalmarks);
+		
+			i++;
+		
+			}
 
-		//sum=ob.calcaverage(name,totalmarks);
+		double average=sum/10;
 
-		}
-		i++;
+		System.out.println("The sum of students totalmarks is: " +sum);
 
-		int average=sum/10;
-		System.out.println(average);
+		System.out.println("The average marks of 10 students is: " +average);
 		
 	}
 }
